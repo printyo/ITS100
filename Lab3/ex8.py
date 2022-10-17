@@ -1,0 +1,8 @@
+word = input("Input a word: ")
+print('The input word is "%s".'%word)
+word = word.strip()
+print("1. %s"%(word.upper()))
+print("2. %s"%(word.lower().capitalize()))
+print("3. %s"%(str(word.isnumeric())))
+print("4. %s"%(str(word.isalpha())))
+print("5. %s"%(str(word.isupper())))
