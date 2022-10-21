@@ -1,19 +1,16 @@
-print("=================")
+print("===================")
 print("Cashier Program")
-print("=================")
+print("===================")
 print()
-i, sums = 0, 0
+summ,count = 0, 0
 while True:
-    x = input("Enter item price or -1 when finished: ")
-    if x == "-1":
-        break
-    x = float(x)
-    sums += x
-    i += 1
-print()
-print("Total purchase amount is %.2f"%sums)
-print()
-pay = float(input("Your payment: "))
-print()
-print("You bought %d items today."%i)
-print("Your change is %.2f baht"%(pay-sums))
+  x = input("Enter item price or -1 when finished: ")
+  if x == "-1":
+    print("\nTotal purchase amount is %.2f\n"%summ)
+    pay = float(input("Your payment: "))
+    print("\nYou bought %d items today.\nYour change is %.2f baht."%(count,(pay-summ)))
+    break
+  else:
+    count += 1
+    summ += float(x)
+    
