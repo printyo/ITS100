@@ -1,10 +1,8 @@
-program = True
-lists = []
-while program:
-    x = input("Input: Enter a word:")
-    if x == "exit":
-        break
-    else:
-       lists.append(x.capitalize())
-    
-print("Output:", lists)
+lis = []
+while True:
+  x = input("Enter a name:")
+  if x == "exit":
+    print(lis)
+    break
+  else:
+    lis.append(x.capitalize())
