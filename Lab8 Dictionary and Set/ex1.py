@@ -1,14 +1,14 @@
-sentence = input("Input: ").split()
-ans = {}
-for key in sentence:
-    key = key.lower()
-    if key in ans:
-        ans[key] += 1
-    else:
-        ans[key] = 1
-lis = sorted(ans.values(), reverse=True)
-maxNum = lis[0]
+mydict = {}
+x = input("Input: ").split()
+for i in x:
+  i = i.lower()
+  if i in mydict:
+    mydict[i] += 1
+  else:
+    mydict[i] = 1
+lists = sorted(mydict.values(), reverse=True)
+maxNum = lists[0]
 print("Output:")
-for key, value in ans.items():
-    if value == maxNum:
-        print(key, "=", value)
+for key, value in mydict.items():
+  if value == maxNum:
+    print(key, "=", value)
