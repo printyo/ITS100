@@ -1,6 +1,6 @@
-x = int(input("Input temperature in degree Celcius: "))
+x = float(input("Input temperature in degree Celcius: "))
 
-def celtofah(c):
-    print("The degree in fahrenheit is %.2f"%((c*9/5)+32))
-    
-celtofah(x)
+def CelsiusToFahrenheit(c):
+  print("The degree in Farenheit is %.2f"%((c*9/5)+32))
+
+CelsiusToFahrenheit(x)

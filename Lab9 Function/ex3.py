@@ -1,32 +1,33 @@
-lis = []
+def SumOut():
+  print("The summation is", sum(myList))
 
-def sumOut():
-    print("The summation is",sum(lis))
-def minOut():
-    print("The minimum is", min(lis))
-def maxOut():
-    print("The maximum is", max(lis))
+def MinOut():
+  print("The minimum is", min(myList))
 
-def userInput():
-    while True:
-        x = input("Enter an input: ")
-        if x == "DONE":
-            print()
-            sumOut()
-            minOut()
-            maxOut()
-            break
+def MaxOut():
+  print("The maximum is", max(myList))
+
+myList = []
+def UserInput():
+  while True:
+    x = input("Enter an input: ")
+    if x == "Done":
+      print()
+      SumOut()
+      MinOut()
+      MaxOut()
+      break
+    else:
+      try:
+        x = int(x)
+      except ValueError:
+        print("Error")
+        break
+      else:
+        if x < 0 :
+          print("Error")
+          break
         else:
-            try:
-                x = int(x)
-            except ValueError:
-                print("Error!")
-                break
-            else:
-                if x < 0:
-                    print("Error!")
-                    break
-                else:
-                    lis.append(x)
-                
-userInput()
+          myList.append(x)
+
+UserInput()
