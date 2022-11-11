@@ -1,29 +1,26 @@
 import numpy as np
 
-data = np.loadtxt("Lab10 Numerical Computing/sales.tsv", delimiter='\t', dtype=float) #import file
+data = np.loadtxt("sales.tsv", delimiter='\t', dtype=float)
 
-branch = data[0:,0] #took first column of branch id
-prodSale = data[0:,1:] #took total product sales
+sales = data[:,1:]
+total = np.sum(sales,axis=1)
 
-summ = np.sum(prodSale, axis =1) #get sum of each row
-order = np.sort(summ) #sort into ascending order
+sortAsc = np.sort(total)
 
-n = len(order) - 1 #this code block reverses the array
-lis = []
-while n >=0:
-    lis.append(order[n])
-    n -= 1
-myArr = np.array(lis) #turn back to matrix why not idk
-
+num = len(data)-1
 myList = []
-for i in range(5):
-    myList.append([branch[i],summ[i]])
-myArray = np.array(myList) #join branch id with sum product sold to corresponding branch
+while num >= 0:
+  myList.append(sortAsc[num])
+  num -= 1
+sortSumDesc = np.array(myList)
+myList = []
+for i in range(len(data)):
+  myList.append([data[i,0], total[i]])
+myArr = np.array(myList)
 
-for j in range(5): #loop to find branch from max to min
-    for i in range(5):
-        if myArr[j] == myArray[i,1]:
-            print(myArray[i])
+print("Branch | Total Sales")
 
-
-
+for i in range(len(data)):
+  for j in range(len(data)):
+    if sortSumDesc[i] == myArr[j,1]:
+      print(myArr[j])

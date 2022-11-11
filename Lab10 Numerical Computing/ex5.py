@@ -1,17 +1,15 @@
 import numpy as np
 
-p1 = input("Input coordinate of P1: ").split()
-p2 = input("Input coordinate of P2: ").split()
-p3 = input("Input coordinate of P3: ").split()
+po1 = input("").split()
+po2 = input("").split()
+po3 = input("").split()
 
-one = np.array([int(p1[0]), int(p1[1]), int(p1[2])]) #convert into matrix and change to integers
-two = np.array([int(p2[0]), int(p2[1]), int(p2[2])])
-three = np.array([int(p3[0]), int(p3[1]), int(p3[2])])
+p1 = [int(po1[0]), int(po1[1]), int(po1[2])]
+p2 = [int(po2[0]), int(po2[1]), int(po2[2])]
+p3 = [int(po3[0]), int(po3[1]), int(po3[2])]
 
-oneTwo = (np.sum((one-two)**2))**0.5 #use the given formula
-twoThree = (np.sum((two-three)**2))**0.5
-oneThree = (np.sum((one-three)**2))**0.5
+arr1 = np.array([p1,p2,p3])
+arr2 = np.array([p2,p3,p1])
 
-print("Output:")
-x = [oneTwo, twoThree, oneThree]
-print("The longest distance = %.2f"%(max(x)))
+dis = np.sqrt(np.sum((arr1-arr2)**2, axis=1))
+print("The longest distance = %.2f"%(np.max(dis)))

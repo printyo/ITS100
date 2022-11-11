@@ -1,19 +1,21 @@
 import numpy as np
 
-x = int(input("Input size of matrix: "))
+x = int(input(""))
 
-majorlst = []
-minorlst = []
+smallList = []
+bigList = []
+
 for row in range(1,x+1):
-    for col in range(1,x+1):
-        y = int(input("Input element at row %d column %d: "%(row,col)))
-        minorlst.append(y)
-    majorlst.append(minorlst)
-    minorlst = []
-    
-print("\nOutput:\nMatrix =")
-z = np.array(majorlst)
-print(z)
-print("Determinant = %.1f"%(np.linalg.det(z)))
-print("Inverse Matrix =")
-print(np.linalg.inv(z))
+  for col in range(1,x+1):
+    el = int(input(""))
+    smallList.append(el)
+  bigList.append(smallList)
+  smallList = []
+
+array = np.array(bigList)
+
+print("Output:")
+print(array)
+print("Determinant =  %.1f"%(np.linalg.det(array)))
+print("Inverse matrix = ")
+print(np.linalg.inv(array))
